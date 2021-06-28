@@ -1,0 +1,238 @@
+# IAM (identity & access management):
+
+    where you manage who has access to your AWS account, and what AWS resources they can use.
+
+    # what is IAM
+
+        IAM is where you manage your AWS users and their access to AWS accounts and services.
+
+        IAM is commonly used to manage:
+            users
+            Groups
+            IAM Access Policies
+            Roles
+
+        Note: the user created when you created the AWS account is Called the "root" user.
+
+        By default, the root user has full administrative rights and acess to every part of the account.
+
+        By default, any new user you create in the AWS account are created with no access to any AWS services.
+
+        for all users (besides the root user), permissions must be given that grant access to AWS services.
+
+    # IAM Setup
+
+        AWS Best Practices: GUidelines that recommend settings, configurations, and architecture for maintaining a high level of security, accessibility, and efficiency.
+
+        when a new AWS root account is created, it is best practice to complete the tasks listed in IAM under Security Status.
+
+        These tasks include:
+
+            Delete your root access keys
+
+            Activate MFA(multi-factor authenition) on your root account
+
+                MFA is an abbreviation for multi-factor authenition
+                
+                MFA is an aditional layer of security on your root account that is provided by a third party.
+
+                it provides you a continually-changing, random, six-digit code that you will need to input(along with your password) when logging into your root account.
+
+                # how do i get the MAF code?
+                    
+                    virtual MAF Device:
+
+                        smartphone or tablet
+
+                        commonly used app: google authenition
+
+                    hardware key fob:
+
+                        small physical Device woth a display that you can attach to your keychain
+
+                        ordered directly from aws
+
+            Create individual IAM users
+            
+                AWS best practice is to never use your account for day-to-day use
+
+                if you want full admin access, create an IAM uasr and attach the administratoraccess policy to it
+
+                use that account as your daily driver
+
+            Use groups to assign permissions
+
+                an IAM group is a collection of IAM users. Groups allow you to set and manage permissions for multipleusers at the same time.
+
+                groups are a more convenient and efficient way to manage account permissions. For example if our user james were to switch positions within the company, we could easily remove james from his old group and add him to new groups.
+
+            Apply an IAM passwors policy
+
+                a password policy dictates the format and expiration rules that a user must follow when creating or modifying their password.
+
+                these rules include:
+
+                    length requirements
+
+                    case requirements
+
+                    number requirements
+
+                    non-alphanumeric requirements
+                    
+                    password expiration
+
+                    password reuse
+
+                    user rights to change their own password
+
+                    administrator reset requirements
+
+    # IAM users and policies
+
+        IAM is commonly used to manage:
+
+            users
+
+            groups
+
+            IAM Access Policies
+
+                project omega 2.0
+
+                have you completed the project omega infrastructure requirements for this section?
+
+                    an AWS account
+
+                    user accounts for the development team with access to core AWS services:
+
+                        three IAM user accounts one for each member of the dev team
+
+                        an IAM group for the dev team
+
+                        IAM policies attached to the groups granting access to S3, EC2, and records
+
+                    proper traffic routing into and out of our AWS Virtual Private Cloud(VPC)
+
+                    A location for bulk storage of files
+
+                    servers to store and catalog database
+
+                    A way to send notifications (email or text messages) to project omega's team menbers based on events that may occur with project omega's infrastructure
+
+                    A way to internally monitor parts of projects omega's infrastructure
+
+                    automate the process of distributing incomming(extemal user) traffic evenly accross projects omegal's AWS resources
+
+                    Set up and configure a web domain that points to project omega's infrastructure
+
+                    test the possibility of using Serverless technology for project omega 
+
+
+            Roles
+
+                Roles are for instance to use other service
+
+                like EC2 instance want some data that stored in S3 bucket 
+
+                at that time we specify roles that gives EC2 instance access to use S3 bucket
+
+# VPC (virtual private cloud):
+
+    a private sub-section of AWS that you control, which you can place AWS resourses, like EC2 instances and databases
+
+    AWS global infrastructure (AWS availability Zones):
+
+        geographically isolated Zones within a region that house resources
+
+        availability Zones are where separate, physical AWS data centers are located
+
+        multiple AZs in each region provide redundancy for AWS resources in that region
+
+    what is a VPC?
+
+        simplified Definition:
+
+            it is a private subsection of AWS that you control, into which you can place AWS resources(such as EC2 instances and databases). you have full control over who has access to the AWS resources that you place inside your VPC.
+
+        AWS Definition:
+
+            "Amazon Virtual Private Cloud(Amazon VPC) lets you provision a logically isolated section of the amazon web service of the amazon web service(AWS) cloud where you launch AWS resources in a virtual network that you define. you have complete control over your virtual networking environment including selection of your own IP address range. creation of subnets and configuration of route tablels and network gateways"
+
+    what is an IGW(Internet Gateways)?
+
+        simplified Definition:
+        
+            A combination of hardware and software that provides your private network with a route to the world outside (meaning the internet) of the VPC
+
+        AWS Definition:
+
+            "an internet gateway is a horizontally scaled, redundant and highly available VPC component that allows communication between instance in your VPC and the internet it therefore inposes no availability risks or bandwidth constraints on your network traffic."
+
+    what is a Route Tables?
+
+        AWS Definition:
+
+            "A route table contains a set of rules. called routes. that are used to determine where network traffic is directed"
+
+    what is a NACL?
+
+        AWS Definition:
+
+            "A network access control list (NACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets."
+
+    what is a subnets?
+
+        AWS Definition:
+
+            "When you create a VPC, it spans all of the availability Zones in the region. After creating a VPC. you can add one or more subnets in each Availability Zone Each subnet must reside entirely when one availability Zone and cannot span zones."
+
+     
+# S3 (simple storage service):
+
+    a bulk storage service where you can store any type of file 
+
+# EC2 (Elastic Cloud Compute):
+
+    Basically a virtual computer, very similar to the dasktop or laptop computer you use at home. and commonly referred to as an instance.
+
+    what is EC2?
+
+        amazon Definition:
+
+            "Amazon Elastic compute cloud(Amazon EC2) provides scalable computing capacity in the amazon web services(AWS) cloud. using amazon EC2 eliminates your need to invest in hardware up front. so you can develop and deploy applixations faster. you can use amazon EC2 to launch as many or as many or as few virtual servers as you need. configure security and networking, and manage storage. amazon EC2 enables you to scale up or down to handle changes in requirements or spikes in popularity. reducing your need to forecast traffic."
+            
+# RBS (relational Database service):
+
+    A database platform that uses mysql as its backbone
+
+# DynamoDB:
+
+    A database service that uses NoSQL as its backbone
+
+# CloudWatch:
+
+    An AWS service that allows fopr monitoring and viewing metrics on the performance of the other AWS services, such as an EC2 instance.
+
+# ELB (Elastic Load Balancer):
+
+    A tool that distributes incomming web traffic (i.e. visitors to a web site) and equally across multiple EC2 instances that are running a web site.
+
+        helps preventone server from being overloaded while another server can handle more visitors.
+
+# Auto Scaling:
+
+    A tool that can automate the scale-up and scale-down of required EC2 instances based on traffic demands
+
+# Route 53:
+
+    an AWS service that allows management of website domains and DNS records.
+
+# Lambda:
+
+    Serverless computing essentially, allowing code to be run without setup and maintenance of actual servers
+
+# CloudWatch
+
+    create watch after cloud resources and send notification after sertun events.
+

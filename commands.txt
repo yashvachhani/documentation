@@ -1,0 +1,16 @@
+# copy file to other pc
+scp -r <username>@<ip>:<path_of_file_you_want_to_copy> <path_of_file_dastination>
+scp -r dipen@192.168.0.12:/home/dipen/BackgroundChecks-main .
+
+# run script on docker
+docker run -itd<for ditach mode> <sh script name> <path of python file> <python file name>
+sudo docker run -it b1 script.sh Domestic_watchlist_and_sanction/DEA_Fugitives dea_fugitive.py
+
+#build docker image
+docker image build <docker file> -t<for name> <name of docker image>
+docker image build . -t backcheck
+
+#chack logs
+docker logs <container id>
+docker logs -f bae96634b203
+

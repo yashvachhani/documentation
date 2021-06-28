@@ -1,0 +1,45 @@
+#Amazon sagemaker 
+
+    amazon sagemaker is a fully managed machine learning service that developers and data scientists can use to build train and deploy machine learning models.
+
+    # notebook instances
+
+        with the notebook instances on sagemaker it all starts with a notebook right and within the notebook it starts with your EC2 instance your EC2 instance that's your it Elastic compute cloud
+        that is your virtual machine, that is gonna spin up and let us do all of our processing this is a managed EC2 instance that means that even though we are turning it on and off it is not gonna show
+        up under our EC2 console and we are not gonna have SSH access to this machine 
+
+        # create your notebook instance
+
+            # i pick the right family
+                ex: {t, m, c, p}
+
+            # Pick the right size 
+                ex: medium -> very, very large
+
+            # Pick the right version  
+                ex: ml.t3.medium
+
+        # add an EBS Volume
+
+            # pick the right size
+                5 GB default
+
+            # think: store on EBS
+                /home/es2-user/Sagemaker
+
+            # add or create git repository
+
+            # configure security settings
+                encryption
+                root Volume access
+                internet access
+                VPC connection
+
+            # Use a Lifecycle configuration
+                Create, start notebook
+                install packages, copy data
+                Run in background with '&'
+
+            # optional attach a portion of a GPU for local inference
+                size, version, bandwidth
+    
