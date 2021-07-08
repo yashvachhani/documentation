@@ -12,6 +12,10 @@
 
             # i pick the right family
                 ex: {t, m, c, p}
+                    t = tiny
+                    m = midium (slieyt larger then tiny)
+                    c = comput optimised
+                    p = gpu
 
             # Pick the right size 
                 ex: medium -> very, very large
