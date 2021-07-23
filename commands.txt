@@ -14,3 +14,4 @@ docker image build . -t backcheck
 docker logs <container id>
 docker logs -f bae96634b203
 
+#ssh -i ssh/LM<tab> ubuntu@ek_sat_2.ten_ek.tan_2.vis
