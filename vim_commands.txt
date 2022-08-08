@@ -1,0 +1,65 @@
+when we enter in vim we are in normal mode
+keys have diffrent functinalitys in normal mode
+we can doe : so we can execute commands in vim
+
+#####################################
+##  keys functionality in normal mode
+#####################################
+
+# a 
+a changes to insert mode after the curser
+
+# i
+i changes to insert mode before the curser
+
+# o
+o changes to insert mode adds to new line
+
+# I
+that moves curser to starting of the line and chages mode to insert mode
+
+# A
+that moves curser to end of the line and changes mode to insert mode
+
+# O
+that add new line up to the curser and chages to insert mode
+
+# <number> arrow key
+moves the curser to number of line in arrow key diraction
+
+# j
+moves curser down
+
+# k
+moves curser up
+
+# l
+moves curser right
+
+# h
+moves curser left
+
+# control + r
+is to re do the last thing
+
+
+
+
+
+
+#############
+##  commands
+#############
+								
+
+								LP;.				
+							]\']"{p;
+# q
+q is to exit from editor
+
+# q!
+! is to exit without saveing file
+
+# w
+w is to wright changes to the file means save the file
+
