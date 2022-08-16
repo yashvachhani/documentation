@@ -1,0 +1,19 @@
+# docker run -p<host computers port>:<container posrt> <image name>:<image version> 
+docker will find image if not available download it and run it
+
+# docker run -d <image or id name>
+runs docker container in detached mode
+
+# docker ps 
+see list of running container
+
+# docker images
+shows list of images available localy
+
+# docker stop <id or container name>
+stops the container
+
+# docker ps -a
+shows list of docker container that are runing or runed priviusly
+
+
